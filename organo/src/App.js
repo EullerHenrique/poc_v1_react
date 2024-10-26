@@ -1,8 +1,12 @@
 import Banner from './component/Banner/Banner';
+import FieldText from './component/FieldText/FieldText';
 
 function App() {
   return (
-    <Banner/>
+    <div>
+      <Banner/>
+      <FieldText/>
+    </div>
   );
 }
 
