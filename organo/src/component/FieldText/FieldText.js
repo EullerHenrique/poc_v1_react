@@ -1,10 +1,10 @@
 import './FieldText.css';
 
-const FieldText = () => {
+const FieldText = (props) => {
     return (
         <div className="field-text"> 
-            <label htmlFor="nome">Nome</label>
-            <input type="text" id="nome" placeholder="Digite seu nome"/>
+            <label htmlFor={props.id}>{props.label}</label>
+            <input type="text" id={props.id} placeholder={props.placeholder}/>
         </div>
     )
 }
