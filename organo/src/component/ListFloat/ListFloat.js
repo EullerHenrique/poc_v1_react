@@ -5,7 +5,7 @@ const ListFloat = (props) => {
     return (
         <div className = "list-float">
             <label>{props.label}</label>
-            <select>
+            <select value={props.value} onChange={event => props.aoAlterar(event.target.value)}>
                 {props.itens.map(item => {
                     return <option key={item}>{item}</option>
                 })}
@@ -16,6 +16,8 @@ const ListFloat = (props) => {
 ListFloat.propTypes = {
     label: PropTypes.string.isRequired,
     itens: PropTypes.array.isRequired,
+    value: PropTypes.string.isRequired,
+    aoAlterar: PropTypes.func.isRequired,
 };
 
 export default ListFloat;
