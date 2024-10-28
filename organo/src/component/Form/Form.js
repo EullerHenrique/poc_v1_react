@@ -13,17 +13,16 @@ const Form = (props) => {
     
     const aoSalvar = (evento) => {
         evento.preventDefault();
-        console.log('Salvou');
-        console.log('Nome: ', nome);
-        console.log('Cargo: ', cargo);
-        console.log('Imagem: ', imagem);
-        console.log('Time: ', time);
         props.aoSalvar({
             nome: nome,
             cargo: cargo,
             imagem: imagem,
             time: time
         });
+        setNome('')
+        setCargo('')
+        setImagem('')
+        setTime('Programação')
     }
     
     return (
@@ -56,12 +55,9 @@ const Form = (props) => {
                 />
                 <ListFloat 
                     label="Times" 
-                    itens={["Programação", "Design", "Marketing", "Vendas"]}
+                    itens={props.times}
                     value={time}
-                    aoAlterar={valor => {
-                        console.log('Time: ', valor);
-                        setTime(valor)}
-                    }
+                    aoAlterar={valor => {setTime(valor)}}
                 />
                 <Button>
                     Criar Card
@@ -73,6 +69,7 @@ const Form = (props) => {
 
 Form.propTypes = {
     aoSalvar: PropTypes.func.isRequired,
+    times: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Form;
