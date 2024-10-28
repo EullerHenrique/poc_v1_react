@@ -13,6 +13,7 @@ const Time = (props) => {
         : ''
     )
 }
+
 Time.propTypes = {
     corSecundaria: PropTypes.string.isRequired,
     corPrimaria: PropTypes.string.isRequired,
